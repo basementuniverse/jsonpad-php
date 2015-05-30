@@ -1,5 +1,3 @@
-# Stripe PHP bindings
-
 # jsonpad PHP library
 
 ## Requirements
