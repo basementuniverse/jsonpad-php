@@ -1,0 +1,15 @@
+<phpunit bootstrap="tests/bootstrap.php" colors="true">
+	<testsuites>
+		<testsuite name="jsonpad API PHP test suite">
+			<directory suffix="Test.php">tests</directory>
+		</testsuite>
+	</testsuites>
+	<filter>
+		<whitelist>
+			<directory>src</directory>
+		</whitelist>
+	</filter>
+	<logging>
+		<log type="coverage-html" target="tests_output"/>
+	</logging>
+</phpunit>
