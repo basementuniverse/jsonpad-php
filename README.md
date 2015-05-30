@@ -1,10 +1,10 @@
 # jsonpad PHP library
 
-This is a PHP library for connecting to your _jsonpad_ account, it allows you to read/write lists and items.
+This is a PHP library for connecting to your [jsonpad](https://jsonpad.io) account, it allows you to read/write lists and items without having to communicate directly with the REST API.
 
 It supports the jsonpad API caching features, so you can load lists and items multiple times without worrying too much about hitting the rate limits.
 
-See the [jsonpad API Documentation](https://jsonpad.io/docs-home) for more information on the _jsonpad API_.
+See the [jsonpad API Documentation](https://jsonpad.io/docs-home) for more information on the jsonpad API.
 
 ## Requirements
 
