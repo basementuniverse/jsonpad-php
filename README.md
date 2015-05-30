@@ -10,9 +10,7 @@ See the [jsonpad API Documentation](https://jsonpad.io/docs-home) for more infor
 
 PHP 5.3.3+
 
-## Composer
-
-*Note: I've not tested installing via composer just yet, currently in progress...*
+## Install with Composer
 
 You can install this library using [Composer](http://getcomposer.org/). Add the following requirement to `composer.json`:
 
@@ -26,7 +24,7 @@ Then run:
 
 	composer install
 
-And in your PHP code, include the Composer autoloader:
+In your PHP code, include the Composer autoloader:
 
 	require_once("vendor/autoload.php");
 
@@ -36,7 +34,7 @@ To install this library manually, just download the [latest release](https://git
 
 Then, include the `init.php` file in your PHP code:
 
-	require_once("/jsonpad-php/init.php");
+	require_once("jsonpad-php/init.php");
 
 ## Documentation
 
@@ -53,4 +51,4 @@ Here's an example of how to get started:
 
 ## Tests
 
-Tests are provided in the `/tests/` folder. These will work with [PHPUnit](http://packagist.org/packages/phpunit/phpunit).
+[PHPUnit](http://packagist.org/packages/phpunit/phpunit) tests are provided in the `/tests/` folder.
