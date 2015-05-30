@@ -1,10 +1,16 @@
 {
 	"name": "jsonpad/jsonpad-php",
 	"description": "jsonpad PHP library",
-	"homepage": "https://jsonpad.io",
+	"homepage": "https://github.com/basementuniverse/jsonpad-php",
 	"license": "MIT",
+	"authors": [
+		{
+			"name": "Gordon Larrigan",
+			"email": "gl@jsonpad.io"
+		}
+	],
 	"require": {
-		"php": ">=5.3",
+		"php": ">=5.3.0",
 		"ext-curl": "*",
 		"ext-json": "*",
 		"ext-mbstring": "*"
