@@ -14,6 +14,7 @@ class ItemList extends MutableResourceBase {
 	private $_itemCount;
 	private $_indexCount;
 	private $_hasSchema;
+	private $_realtimeEnabled;
 	private $_created;
 	private $_updated;
 	
@@ -30,6 +31,7 @@ class ItemList extends MutableResourceBase {
 		$this->_itemCount = parent::_getDataProperty("item_count", $list);
 		$this->_indexCount = parent::_getDataProperty("index_count", $list);
 		$this->_hasSchema = parent::_getDataProperty("has_schema", $list);
+		$this->_realtimeEnabled = parent::_getDataProperty("realtime_enabled", $list);
 		$this->_created = parent::_getDataProperty("created", $list);
 		$this->_updated = parent::_getDataProperty("updated", $list);
 	}
@@ -92,6 +94,27 @@ class ItemList extends MutableResourceBase {
 	}
 	
 	/**
+	* Get the realtime enabled state for this list
+	*
+	* @return bool True if realtime events are enabled for this list
+	*/
+	public function getRealtimeEnabled() {
+		return $this->_realtimeEnabled;
+	}
+	
+	/**
+	* Set the realtime enabled state for this list
+	*
+	* @param bool $realtimeEnabled True if realtime events should be enabled for this list
+	*/
+	public function setRealtimeEnabled($realtimeEnabled) {
+		if (is_bool($realtimeEnabled)) {
+			$this->_realtimeEnabled = (bool)$realtimeEnabled;
+			$this->_dirty = true;
+		}
+	}
+	
+	/**
 	* Get the created date/time for this list in ISO 8601 format
 	*
 	* @return string The list's created date/time
@@ -113,7 +136,10 @@ class ItemList extends MutableResourceBase {
 	* Save this list's current state to the API
 	*/
 	public function save() {
-		parent::_save(array("name" => $this->_name));
+		parent::_save(array(
+			"name" => $this->_name,
+			"realtime_enabled" => $this->_realtimeEnabled
+		));
 		$this->_liveName = $this->_name;
 	}
 	
@@ -126,6 +152,7 @@ class ItemList extends MutableResourceBase {
 		$this->_itemCount = $list["item_count"];
 		$this->_indexCount = $list["index_count"];
 		$this->_hasSchema = $list["has_schema"];
+		$this->_realtimeEnabled = $list["realtime_enabled"];
 		$this->_created = $list["created"];
 		$this->_updated = $list["updated"];
 	}

@@ -70,13 +70,14 @@ class Jsonpad {
 	* Create a new list
 	*
 	* @param string $name The list's name
+	* @param bool $realtimeEnabled True if realtime events should be enabled for this list
 	* @param array|null $schema An optional JSON schema for validating the list's items
 	* @param array|null $indexes An optional array of indexes. Each index should be an associative
 	*	array with the following keys: "name", "path", "type" and "default_descending"
 	*
 	* @return \Jsonpad\Resource\ItemList The list that was created
 	*/
-	public function createList($name, $schema = null, $indexes = null) {
+	public function createList($name, $realtimeEnabled = false, $schema = null, $indexes = null) {
 		list($status, $response, $responseHeaders) = ApiConnector::request(
 			$this->_username,
 			$this->_apiToken,
@@ -85,6 +86,7 @@ class Jsonpad {
 			null,
 			array(
 				"name" => $name,
+				"realtime_enabled" => $realtimeEnabled,
 				"schema" => $schema,
 				"indexes" => $indexes
 			)
