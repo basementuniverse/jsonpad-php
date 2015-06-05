@@ -13,6 +13,7 @@ class ItemList extends MutableResourceBase {
 	private $_name;
 	private $_itemCount;
 	private $_indexCount;
+	private $_dataSize;
 	private $_hasSchema;
 	private $_realtimeEnabled;
 	private $_created;
@@ -30,6 +31,7 @@ class ItemList extends MutableResourceBase {
 		$this->_liveName = $this->_name = parent::_getDataProperty("name", $list);
 		$this->_itemCount = parent::_getDataProperty("item_count", $list);
 		$this->_indexCount = parent::_getDataProperty("index_count", $list);
+		$this->_dataSize = parent::_getDataProperty("data_size", $list);
 		$this->_hasSchema = parent::_getDataProperty("has_schema", $list);
 		$this->_realtimeEnabled = parent::_getDataProperty("realtime_enabled", $list);
 		$this->_created = parent::_getDataProperty("created", $list);
@@ -82,6 +84,15 @@ class ItemList extends MutableResourceBase {
 	*/
 	public function getIndexCount() {
 		return $this->_indexCount;
+	}
+	
+	/**
+	* Get the item data size for all items contained in this list
+	*
+	* @return int The item data size for all items contained in this list
+	*/
+	public function getDataSize() {
+		return $this->_dataSize;
 	}
 	
 	/**
@@ -151,6 +162,7 @@ class ItemList extends MutableResourceBase {
 		$this->_liveName = $this->_name = $list["name"];
 		$this->_itemCount = $list["item_count"];
 		$this->_indexCount = $list["index_count"];
+		$this->_dataSize = $list["data_size"];
 		$this->_hasSchema = $list["has_schema"];
 		$this->_realtimeEnabled = $list["realtime_enabled"];
 		$this->_created = $list["created"];

@@ -145,8 +145,8 @@ class Jsonpad {
 	* @param int|null $pageSize The number of lists per page, if this isn't specified then the
 	*	default page size will be used instead
 	* @param string|null $sort The field to sort lists by (this can be "name", "item_count",
-	*	"created" or "updated"), if this isn't specified the default sort field for lists will be
-	*	used instead
+	*	"data_size", "created" or "updated"), if this isn't specified the default sort field for
+	*	lists will be used instead
 	* @param bool|null $descending True if the lists should be sorted in descending order. If this
 	*	is null, the default ordering mode for lists will be used
 	* @param int &$total Outputs the total number of events
