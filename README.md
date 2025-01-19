@@ -1,5 +1,8 @@
 # jsonpad PHP library
 
+> DEPRECATED
+> This was designed for the old (~2015) version of jsonpad, which has since been rebuilt from the ground-up. This repo no longer works.
+
 This is a PHP library for connecting to your [jsonpad](https://jsonpad.io) account, it allows you to read/write lists and items without having to communicate directly with the REST API.
 
 It supports the jsonpad API caching features, so you can load lists and items multiple times without worrying too much about hitting the rate limits.
